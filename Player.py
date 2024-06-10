@@ -13,8 +13,8 @@ class player:
             print("please enter letters only")
 
     def choose_symbol(self):
-        symbol = input(f"Hiii {self.name}, Enter your symbol (X or O): ").upper()
         while True:
+            symbol = input(f"Hiii {self.name}, Enter your symbol (X or O): ").upper()
             if symbol == "X" or symbol == "O":
                 self.symbol = symbol
                 break
