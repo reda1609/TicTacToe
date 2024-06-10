@@ -1,5 +1,7 @@
 class player:
     
+    symbols = []
+
     def __init__(self) -> None:
         self.name = ""
         self.symbol = ""
@@ -15,7 +17,12 @@ class player:
     def choose_symbol(self):
         while True:
             symbol = input(f"Hiii {self.name}, Enter your symbol (X or O): ").upper()
-            if symbol == "X" or symbol == "O":
-                self.symbol = symbol
-                break
-            print("please enter X or O only")
+            if symbol not in player.symbols:
+                if symbol == "X" or symbol == "O":
+                    self.symbol = symbol
+                    player.symbols.append(self.symbol)
+                    break
+                print("please enter X or O only")
+                continue
+            print("This symbol is already choosen")
+            
