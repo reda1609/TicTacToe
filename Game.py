@@ -37,6 +37,8 @@ class game:
             if self.check_win() or self.check_draw():
                 if self.check_win():
                     print(f"{self.players[1 - self.current_player].name} won!")
+                if self.check_draw():
+                    print("No one won")
                 choice = self.menu.display_endgame_menu()
                 if choice == "1":
                     self.restart_game()
